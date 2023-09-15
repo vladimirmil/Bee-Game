@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://byv24mpba665e"]
+
+[ext_resource type="PackedScene" uid="uid://bir2jef51jfic" path="res://Scenes/level.tscn" id="1_7n0nk"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="2_bgtff"]
+[ext_resource type="PackedScene" uid="uid://4ujmgwtulnjq" path="res://Scenes/thorn.tscn" id="2_o1llm"]
+[ext_resource type="Texture2D" uid="uid://cs1vmw2m1qbnj" path="res://Sprites/sky.png" id="2_unnpr"]
+[ext_resource type="PackedScene" uid="uid://bikqmlua3vnw3" path="res://Scenes/leaf.tscn" id="3_u6dse"]
+
+[node name="Level1" instance=ExtResource("1_7n0nk")]
+script = ExtResource("2_bgtff")
+
+[node name="Skycrop" type="Sprite2D" parent="SkyNode" index="0"]
+texture = ExtResource("2_unnpr")
+centered = false
+
+[node name="Skycrop2" type="Sprite2D" parent="SkyNode" index="1"]
+position = Vector2(0, -1080)
+texture = ExtResource("2_unnpr")
+centered = false
+
+[node name="Skycrop3" type="Sprite2D" parent="SkyNode" index="2"]
+position = Vector2(0, -2160)
+texture = ExtResource("2_unnpr")
+centered = false
+
+[node name="Thorne3" parent="Node2D/ThornesNode" index="0" instance=ExtResource("2_o1llm")]
+position = Vector2(445, 1029)
+
+[node name="Thorne4" parent="Node2D/ThornesNode" index="1" instance=ExtResource("2_o1llm")]
+position = Vector2(696, 1029)
+
+[node name="Thorne5" parent="Node2D/ThornesNode" index="2" instance=ExtResource("2_o1llm")]
+position = Vector2(947, 1029)
+
+[node name="Thorne6" parent="Node2D/ThornesNode" index="3" instance=ExtResource("2_o1llm")]
+position = Vector2(1198, 1029)
+
+[node name="Thorne7" parent="Node2D/ThornesNode" index="4" instance=ExtResource("2_o1llm")]
+position = Vector2(1449, 1029)
+
+[node name="Thorne8" parent="Node2D/ThornesNode" index="5" instance=ExtResource("2_o1llm")]
+position = Vector2(1535, 535)
+
+[node name="Thorne2" parent="Node2D/ThornesNode" index="6" instance=ExtResource("2_o1llm")]
+position = Vector2(728, 265)
+
+[node name="Leaf" parent="Node2D/LeavesNode" index="0" instance=ExtResource("3_u6dse")]
+position = Vector2(1206, -147)
+
+[node name="Leaf3" parent="Node2D/LeavesNode" index="1" instance=ExtResource("3_u6dse")]
+position = Vector2(1394, 813)
+
+[node name="Leaf4" parent="Node2D/LeavesNode" index="2" instance=ExtResource("3_u6dse")]
+position = Vector2(1274, 556)
+
+[node name="Leaf5" parent="Node2D/LeavesNode" index="3" instance=ExtResource("3_u6dse")]
+position = Vector2(1074, 160)
+
+[node name="Leaf7" parent="Node2D/LeavesNode" index="4" instance=ExtResource("3_u6dse")]
+position = Vector2(453, 443)
+
+[node name="Leaf8" parent="Node2D/LeavesNode" index="5" instance=ExtResource("3_u6dse")]
+position = Vector2(802, 839)
+
+[node name="Leaf2" parent="Node2D/LeavesNode" index="6" instance=ExtResource("3_u6dse")]
+position = Vector2(589, 846)
+
+[node name="Bee" parent="Node2D" index="2"]
+position = Vector2(807, 748)

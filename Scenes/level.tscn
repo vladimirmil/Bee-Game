@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bir2jef51jfic"]
+
+[ext_resource type="PackedScene" uid="uid://616fllgpt5b3" path="res://Scenes/ui.tscn" id="1_7oiug"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_b7drj"]
+[ext_resource type="PackedScene" uid="uid://c4w2mfk271xvb" path="res://Scenes/bee.tscn" id="2_nwn3f"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_b7drj")
+
+[node name="UI" parent="." instance=ExtResource("1_7oiug")]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SkyNode" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ThornesNode" type="Node2D" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="LeavesNode" type="Node2D" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="Bee" parent="Node2D" instance=ExtResource("2_nwn3f")]
+position = Vector2(994, 650)

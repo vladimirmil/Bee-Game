@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bikqmlua3vnw3"]
+
+[ext_resource type="Script" path="res://Scripts/leaf.gd" id="1_e426m"]
+[ext_resource type="Texture2D" uid="uid://coe0fgi3xuo6t" path="res://Sprites/leaf.png" id="1_ynalo"]
+[ext_resource type="Texture2D" uid="uid://caeqlcvsovj55" path="res://Sprites/flower.png" id="2_mmbnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_popqs"]
+size = Vector2(222, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ouxw"]
+size = Vector2(57, 89)
+
+[node name="Leaf" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_e426m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ynalo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(97, -61)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mmbnf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 2.5)
+shape = SubResource("RectangleShape2D_popqs")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(98, -63)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 14.5)
+shape = SubResource("RectangleShape2D_6ouxw")

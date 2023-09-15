@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://616fllgpt5b3"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_ry3vi"]
+[ext_resource type="Texture2D" uid="uid://su4bcgu1gbty" path="res://Sprites/frame.png" id="2_v1kxa"]
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ry3vi")
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+size = Vector2i(500, 250)
+visible = false
+exclusive = true
+unresizable = true
+borderless = true
+transparent = true
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -68.5
+offset_right = 100.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Button" type="Button" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Resume"
+
+[node name="Button3" type="Button" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Quit"
+
+[node name="GameOverWindow" type="Window" parent="."]
+transparent_bg = true
+size = Vector2i(500, 250)
+exclusive = true
+unresizable = true
+borderless = true
+transparent = true
+
+[node name="Panel" type="Panel" parent="GameOverWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverWindow/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -68.5
+offset_right = 100.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="GameOverWindow/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOverWindow/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="GameOverWindow/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="GameOverWindow/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_v1kxa")
