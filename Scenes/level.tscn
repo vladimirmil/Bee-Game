@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bir2jef51jfic"]
+[gd_scene load_steps=5 format=3 uid="uid://bir2jef51jfic"]
 
 [ext_resource type="PackedScene" uid="uid://616fllgpt5b3" path="res://Scenes/ui.tscn" id="1_7oiug"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_b7drj"]
 [ext_resource type="PackedScene" uid="uid://c4w2mfk271xvb" path="res://Scenes/bee.tscn" id="2_nwn3f"]
+[ext_resource type="Texture2D" uid="uid://cs1vmw2m1qbnj" path="res://Sprites/sky.png" id="3_lb60q"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_b7drj")
@@ -12,7 +13,11 @@ script = ExtResource("1_b7drj")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="SkyNode" type="Node2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_lb60q")
+stretch_mode = 1
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true

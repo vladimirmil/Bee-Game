@@ -1,27 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://byv24mpba665e"]
+[gd_scene load_steps=5 format=3 uid="uid://byv24mpba665e"]
 
 [ext_resource type="PackedScene" uid="uid://bir2jef51jfic" path="res://Scenes/level.tscn" id="1_7n0nk"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="2_bgtff"]
 [ext_resource type="PackedScene" uid="uid://4ujmgwtulnjq" path="res://Scenes/thorn.tscn" id="2_o1llm"]
-[ext_resource type="Texture2D" uid="uid://cs1vmw2m1qbnj" path="res://Sprites/sky.png" id="2_unnpr"]
 [ext_resource type="PackedScene" uid="uid://bikqmlua3vnw3" path="res://Scenes/leaf.tscn" id="3_u6dse"]
 
 [node name="Level1" instance=ExtResource("1_7n0nk")]
 script = ExtResource("2_bgtff")
+metadata/_edit_vertical_guides_ = [336.0, 1581.0]
 
-[node name="Skycrop" type="Sprite2D" parent="SkyNode" index="0"]
-texture = ExtResource("2_unnpr")
-centered = false
-
-[node name="Skycrop2" type="Sprite2D" parent="SkyNode" index="1"]
-position = Vector2(0, -1080)
-texture = ExtResource("2_unnpr")
-centered = false
-
-[node name="Skycrop3" type="Sprite2D" parent="SkyNode" index="2"]
-position = Vector2(0, -2160)
-texture = ExtResource("2_unnpr")
-centered = false
+[node name="TextureRect" parent="." index="2"]
+offset_top = -5574.0
+offset_right = 1920.0
+offset_bottom = 1603.0
 
 [node name="Thorne3" parent="Node2D/ThornesNode" index="0" instance=ExtResource("2_o1llm")]
 position = Vector2(445, 1029)
@@ -38,32 +29,74 @@ position = Vector2(1198, 1029)
 [node name="Thorne7" parent="Node2D/ThornesNode" index="4" instance=ExtResource("2_o1llm")]
 position = Vector2(1449, 1029)
 
-[node name="Thorne8" parent="Node2D/ThornesNode" index="5" instance=ExtResource("2_o1llm")]
-position = Vector2(1535, 535)
+[node name="Thorne16" parent="Node2D/ThornesNode" index="5" instance=ExtResource("2_o1llm")]
+position = Vector2(350, -4940)
 
-[node name="Thorne2" parent="Node2D/ThornesNode" index="6" instance=ExtResource("2_o1llm")]
-position = Vector2(728, 265)
+[node name="Thorne17" parent="Node2D/ThornesNode" index="6" instance=ExtResource("2_o1llm")]
+position = Vector2(601, -4940)
+
+[node name="Thorne18" parent="Node2D/ThornesNode" index="7" instance=ExtResource("2_o1llm")]
+position = Vector2(852, -4940)
+
+[node name="Thorne19" parent="Node2D/ThornesNode" index="8" instance=ExtResource("2_o1llm")]
+position = Vector2(1103, -4940)
+
+[node name="Thorne20" parent="Node2D/ThornesNode" index="9" instance=ExtResource("2_o1llm")]
+position = Vector2(1354, -4940)
+
+[node name="Thorne21" parent="Node2D/ThornesNode" index="10" instance=ExtResource("2_o1llm")]
+position = Vector2(1607, -4940)
+
+[node name="Thorne8" parent="Node2D/ThornesNode" index="11" instance=ExtResource("2_o1llm")]
+position = Vector2(1158, -689)
+
+[node name="Thorne9" parent="Node2D/ThornesNode" index="12" instance=ExtResource("2_o1llm")]
+position = Vector2(712, -885)
+
+[node name="Thorne10" parent="Node2D/ThornesNode" index="13" instance=ExtResource("2_o1llm")]
+position = Vector2(651, -2176)
+
+[node name="Thorne11" parent="Node2D/ThornesNode" index="14" instance=ExtResource("2_o1llm")]
+position = Vector2(822, -2450)
+
+[node name="Thorne12" parent="Node2D/ThornesNode" index="15" instance=ExtResource("2_o1llm")]
+position = Vector2(619, -3498)
+
+[node name="Thorne14" parent="Node2D/ThornesNode" index="16" instance=ExtResource("2_o1llm")]
+position = Vector2(964, -4341)
+
+[node name="Thorne15" parent="Node2D/ThornesNode" index="17" instance=ExtResource("2_o1llm")]
+position = Vector2(547, -4576)
+
+[node name="Thorne13" parent="Node2D/ThornesNode" index="18" instance=ExtResource("2_o1llm")]
+position = Vector2(1245, -3497)
+
+[node name="Thorne2" parent="Node2D/ThornesNode" index="19" instance=ExtResource("2_o1llm")]
+position = Vector2(1155, -101)
 
 [node name="Leaf" parent="Node2D/LeavesNode" index="0" instance=ExtResource("3_u6dse")]
-position = Vector2(1206, -147)
+position = Vector2(808, -179)
 
 [node name="Leaf3" parent="Node2D/LeavesNode" index="1" instance=ExtResource("3_u6dse")]
-position = Vector2(1394, 813)
+position = Vector2(472, -667)
 
 [node name="Leaf4" parent="Node2D/LeavesNode" index="2" instance=ExtResource("3_u6dse")]
-position = Vector2(1274, 556)
+position = Vector2(581, -1424)
 
 [node name="Leaf5" parent="Node2D/LeavesNode" index="3" instance=ExtResource("3_u6dse")]
-position = Vector2(1074, 160)
+position = Vector2(462, -2269)
 
-[node name="Leaf7" parent="Node2D/LeavesNode" index="4" instance=ExtResource("3_u6dse")]
-position = Vector2(453, 443)
+[node name="Leaf6" parent="Node2D/LeavesNode" index="4" instance=ExtResource("3_u6dse")]
+position = Vector2(460, -2546)
 
 [node name="Leaf8" parent="Node2D/LeavesNode" index="5" instance=ExtResource("3_u6dse")]
-position = Vector2(802, 839)
+position = Vector2(450, -4668)
 
-[node name="Leaf2" parent="Node2D/LeavesNode" index="6" instance=ExtResource("3_u6dse")]
-position = Vector2(589, 846)
+[node name="Leaf7" parent="Node2D/LeavesNode" index="6" instance=ExtResource("3_u6dse")]
+position = Vector2(1052, -4434)
+
+[node name="Leaf2" parent="Node2D/LeavesNode" index="7" instance=ExtResource("3_u6dse")]
+position = Vector2(1014, 557)
 
 [node name="Bee" parent="Node2D" index="2"]
-position = Vector2(807, 748)
+position = Vector2(1015, 466)

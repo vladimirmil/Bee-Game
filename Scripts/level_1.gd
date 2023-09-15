@@ -1,7 +1,12 @@
 extends "res://Scripts/level.gd"
 
 
+var levelTime : int = 30
+var levelHP : int = 4
+
 func _ready():
 	super._ready()
-	SetLevelTime(60)
-	StartLevel()
+	SetBeeHP(levelHP)
+	UI.InitUIText(flowerCount, levelTime, levelHP)
+	StartLevel(levelTime)
+	

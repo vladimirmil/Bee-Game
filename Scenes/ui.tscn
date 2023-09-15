@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://616fllgpt5b3"]
+[gd_scene load_steps=8 format=3 uid="uid://616fllgpt5b3"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_ry3vi"]
+[ext_resource type="Texture2D" uid="uid://c2kpeo3tpk5xi" path="res://Sprites/icons/flower.png" id="2_51qq0"]
 [ext_resource type="Texture2D" uid="uid://su4bcgu1gbty" path="res://Sprites/frame.png" id="2_v1kxa"]
+[ext_resource type="Texture2D" uid="uid://tmn6qhu8ykwr" path="res://Sprites/icons/hive.png" id="3_xjxnt"]
+[ext_resource type="Texture2D" uid="uid://e185q4wbikix" path="res://Sprites/icons/time.png" id="4_105ps"]
+[ext_resource type="Texture2D" uid="uid://gv6wdkv8psal" path="res://Sprites/icons/bee.png" id="5_juklh"]
+
+[sub_resource type="Theme" id="Theme_7vksv"]
+Label/colors/font_color = Color(1, 0.701961, 0.235294, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 12
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -56,6 +65,7 @@ text = "Quit"
 [node name="GameOverWindow" type="Window" parent="."]
 transparent_bg = true
 size = Vector2i(500, 250)
+visible = false
 exclusive = true
 unresizable = true
 borderless = true
@@ -106,7 +116,126 @@ custom_minimum_size = Vector2(200, 35)
 layout_mode = 2
 text = "Quit"
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 398.0
+offset_top = 83.0
+offset_right = 1512.0
+offset_bottom = 173.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 126.0
+offset_bottom = 126.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_51qq0")
+
+[node name="FlowersLeftLabel" type="Label" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -77.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_7vksv")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 457.5
+offset_top = -2.0
+offset_right = 583.5
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_105ps")
+
+[node name="TimeLabel" type="Label" parent="Control/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -77.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_7vksv")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 548.5
+offset_top = -2.0
+offset_right = 674.5
+offset_bottom = 124.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_xjxnt")
+
+[node name="FlowersPickedLabel" type="Label" parent="Control/TextureRect3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -77.0
+offset_right = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_7vksv")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_bottom = 126.0
+grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_juklh")
+
+[node name="LivesLabel" type="Label" parent="Control/TextureRect4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -77.0
+offset_right = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_7vksv")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_v1kxa")
+metadata/_edit_lock_ = true

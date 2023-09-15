@@ -6,7 +6,6 @@ extends Node2D
 @onready var leavesNode : Node2D = $Node2D/LeavesNode
 
 
-var levelTime : int = 0
 var flowerCount : int = 0
 var flowersPicked : int = 0
 
@@ -21,24 +20,32 @@ func _ready() -> void:
 		leavesNode.get_child(i).flowerPicked.connect(OnFlowerPicked)
 
 
+func _process(_delta) -> void:
+	UI.UpdateTime(int(timer.time_left))
 
-func SetLevelTime(i : int) -> void:
-	levelTime = i
+
+func StartLevel(i : int) -> void:
+	timer.start(i)
 
 
-func StartLevel() -> void:
-	timer.start(levelTime)
+func SetBeeHP(i : int) -> void:
+	bee.SetHP(i)
 
+
+func GetBeeHP() -> int:
+	return bee.GetHP()
 
 
 func OnTimeout() -> void:
-	print("Game Over")
+	OnDied()
 
 
 # Finds the closest leaf to the bee
-func OnHurt() -> void:
+func OnHurt(currentHP : int) -> void:
 	var closestChild : Object = null
 	var distance : float = 0.0
+	
+	UI.UpdateHP(currentHP)
 	
 	for i in range(0, leavesNode.get_child_count(), 1):
 		if i == 0:
@@ -54,8 +61,9 @@ func OnHurt() -> void:
 
 func OnFlowerPicked() -> void:
 	flowersPicked += 1
+	UI.UpdateFlowers(flowersPicked, flowerCount - flowersPicked)
 	if flowersPicked == flowerCount:
-		var score : int = flowersPicked * 100 - (flowerCount - flowersPicked) * 100 + int(timer.time_left) * 10
+		var score : int = flowersPicked * 100 + int(timer.time_left) * 50
 		UI.SetScore(score, true)
 
 

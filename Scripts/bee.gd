@@ -21,7 +21,7 @@ var inertiaDecay : float = 0.01
 var spriteRotation : float = 20.0
 var hurtMovePosition : Vector2 = Vector2.ZERO
 var moveThreshold : int = 15
-var screenLimits : Vector2 = Vector2(60.0, 1860.0)
+var screenLimits : Vector2 = Vector2(330.0, 1590.0)
 
 var prevPos
 var prevPosFlag : bool = false
@@ -98,6 +98,13 @@ func _physics_process(delta) -> void:
 				state = ALIVE
 
 
+func SetHP(i : int) -> void:
+	hp = i
+
+
+func GetHP() -> int: return hp
+
+
 func setHurtMovePosition(from : Vector2, to : Vector2) -> void:
 	hurtMovePosition = to
 	prevPos = position.distance_to(hurtMovePosition)
@@ -115,7 +122,7 @@ func OnDamage(damage : int) -> void:
 	rotation_degrees = 0
 	
 	hp -= damage
-	emit_signal("hurt")
+	emit_signal("hurt", hp)
 	
 	if hp <= 0:
 		emit_signal("died")

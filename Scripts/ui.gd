@@ -7,6 +7,10 @@ extends CanvasLayer
 @onready var scoreLabel : Label = $GameOverWindow/Panel/VBoxContainer/Label2
 @onready var btnContainer : VBoxContainer = $Window/Panel/VBoxContainer
 @onready var gameOverBtnContainer : VBoxContainer = $GameOverWindow/Panel/VBoxContainer
+@onready var flowersLeftLabel : Label = $Control/TextureRect/FlowersLeftLabel
+@onready var timeLabel : Label = $Control/TextureRect2/TimeLabel
+@onready var flowersPickedLabel : Label = $Control/TextureRect3/FlowersPickedLabel
+@onready var HPLabel : Label = $Control/TextureRect4/LivesLabel
 
 
 func _ready() -> void:
@@ -26,6 +30,25 @@ func _unhandled_key_input(event):
 		window.popup_centered()
 		get_tree().paused = true
 
+
+func InitUIText(fl : int, t : int, l : int) -> void:
+	flowersLeftLabel.text = str(fl)
+	timeLabel.text = str(t)
+	flowersPickedLabel.text = "0"
+	HPLabel.text = str(l)
+
+
+func UpdateHP(i : int) -> void:
+	HPLabel.text = str(i)
+
+
+func UpdateFlowers(fp : int, fl : int) -> void:
+	flowersPickedLabel.text = str(fp)
+	flowersLeftLabel.text = str(fl)
+
+
+func UpdateTime(t : int) -> void:
+	timeLabel.text = str(t)
 
 
 func SetScore(value : int, hasWon : bool) -> void:
